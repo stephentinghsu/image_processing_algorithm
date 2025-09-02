@@ -1,0 +1,42 @@
+
+# Assign the design verilog ports to the device IO pins
+set_property PACKAGE_PIN W5 [get_ports clk]
+set_property PACKAGE_PIN V17 [get_ports rst]
+set_property PACKAGE_PIN V16 [get_ports func]
+set_property PACKAGE_PIN G19 [get_ports red_out[0]]
+set_property PACKAGE_PIN H19 [get_ports red_out[1]]
+set_property PACKAGE_PIN J19 [get_ports red_out[2]]
+set_property PACKAGE_PIN N19 [get_ports red_out[3]]
+set_property PACKAGE_PIN J17 [get_ports green_out[0]]
+set_property PACKAGE_PIN H17 [get_ports green_out[1]]
+set_property PACKAGE_PIN G17 [get_ports green_out[2]]
+set_property PACKAGE_PIN D17 [get_ports green_out[3]]
+set_property PACKAGE_PIN N18 [get_ports blue_out[0]]
+set_property PACKAGE_PIN L18 [get_ports blue_out[1]]
+set_property PACKAGE_PIN K18 [get_ports blue_out[2]]
+set_property PACKAGE_PIN J18 [get_ports blue_out[3]]
+set_property PACKAGE_PIN P19 [get_ports hsync_out]
+set_property PACKAGE_PIN R19 [get_ports vsync_out]
+
+# set some IO property of the ports
+set_property IOSTANDARD LVCMOS18 [get_ports clk]
+set_property IOSTANDARD LVCMOS18 [get_ports rst]
+set_property IOSTANDARD LVCMOS18 [get_ports func]
+set_property IOSTANDARD LVCMOS18 [get_ports red_out[0]]
+set_property IOSTANDARD LVCMOS18 [get_ports red_out[1]]
+set_property IOSTANDARD LVCMOS18 [get_ports red_out[2]]
+set_property IOSTANDARD LVCMOS18 [get_ports red_out[3]]
+set_property IOSTANDARD LVCMOS18 [get_ports green_out[0]]
+set_property IOSTANDARD LVCMOS18 [get_ports green_out[1]]
+set_property IOSTANDARD LVCMOS18 [get_ports green_out[2]]
+set_property IOSTANDARD LVCMOS18 [get_ports green_out[3]]
+set_property IOSTANDARD LVCMOS18 [get_ports blue_out[0]]
+set_property IOSTANDARD LVCMOS18 [get_ports blue_out[1]]
+set_property IOSTANDARD LVCMOS18 [get_ports blue_out[2]]
+set_property IOSTANDARD LVCMOS18 [get_ports blue_out[3]]
+set_property IOSTANDARD LVCMOS18 [get_ports hsync_out]
+set_property IOSTANDARD LVCMOS18 [get_ports vsync_out]
+
+# define the property of a clock port so Vivado know this port is for a CLOCK signal
+# and it can do something properly for this port
+create_clock -period 12.000  -waveform {0.000 6.000} [get_ports clk]
