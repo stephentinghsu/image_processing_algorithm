@@ -30,7 +30,7 @@ assign p_3max_min = (p012_max <= p345_max) ? ((p012_max <= p678_max) ? p012_max 
 assign p_3min_max = (p012_min >= p345_min) ? ((p012_min >= p678_min) ? p012_min : p678_min
                                            : ((p345_min >= p678_min) ? p345_min : p678_min);
 
-// exclude the two maximum from the five median
+// exclude the two maximum from the five median, and the third maximum is the median
 reg [bit_width-1:0] p_4med_0, p_4med_1, p_4med_2, p_4med_3; 
 reg [bit_width-1:0] p_3med_0, p_3med_1, p_3med_2;
 
@@ -64,10 +64,8 @@ always @(*)begin
     end
 end
 
-//
-assign out = (p_3med_0 <= p_3med_1) ? ((p_3med_0 <= p_3med_2) ? ((p_3med_1 <= p_3med_2) ? p_3med_1 : p_3med_2) : p_3med_0)
-                                    : ((p_3med_1 <= p_3med_2) ? ((p_3med_0 <= p_3med_2) ? p_3med_0 : p_3med_2) : p_3med_1);
-                                    
+assign out = (p_3med_0 >= p_3med_1) ? ((p_3med_0 >= p_3med_2) ? p_3med_0 : p_3med_2) : ((p_3med_1 >= p_3med_2) ? p_3med_1 : p_3med_2);
+                                              
 // wire [10:0] sum;
 // assign sum = p0+p1+p2+p3+p5+p6+p7+p8;
 // assign out = sum/8'h08;
