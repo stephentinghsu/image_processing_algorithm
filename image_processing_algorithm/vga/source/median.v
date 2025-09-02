@@ -53,11 +53,11 @@ end
 always @(*)begin
     if((p_4med_0 >= p_4med_1)&&(p_4med_0 >= p_4med_2)&&(p_4med_0 >= p_4med_3))begin
     p_3med_0 = p_4med_1; p_3med_1 = p_4med_2; p_3med_2 = p_4med_3;
-    end else((p_4med_1 >= p_4med_0)&&(p_4med_1 >= p_4med_2)&&(p_4med_1 >= p_4med_3))begin
+    end else if((p_4med_1 >= p_4med_0)&&(p_4med_1 >= p_4med_2)&&(p_4med_1 >= p_4med_3))begin
     p_3med_0 = p_4med_0; p_3med_1 = p_4med_2; p_3med_2 = p_4med_3;
-    end else((p_4med_2 >= p_4med_0)&&(p_4med_2 >= p_4med_1)&&(p_4med_2 >= p_4med_3))begin
+    end else if((p_4med_2 >= p_4med_0)&&(p_4med_2 >= p_4med_1)&&(p_4med_2 >= p_4med_3))begin
     p_3med_0 = p_4med_0; p_3med_1 = p_4med_1; p_3med_2 = p_4med_3;
-    end else((p_4med_3 >= p_4med_0)&&(p_4med_3 >= p_4med_1)&&(p_4med_3 >= p_4med_2))begin
+    end else if((p_4med_3 >= p_4med_0)&&(p_4med_3 >= p_4med_1)&&(p_4med_3 >= p_4med_2))begin
     p_3med_0 = p_4med_0; p_3med_1 = p_4med_1; p_3med_2 = p_4med_2;
     end else begin
     p_3med_0 = p_4med_0; p_3med_1 = p_4med_1; p_3med_2 = p_4med_2;
