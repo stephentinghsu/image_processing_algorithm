@@ -22,7 +22,7 @@
 </ul>
 <h3>Software & Tools</h3>
 <ul>
-  <li>Hardware Description Language (HDL): Verilog</li>
+  <li>Hardware Description Language (HDL): Verilog HDL</li>
   <li>Simulation: Xilinx Vivado</li>
   <li>Synthesis: Xilinx Vivado</li>
   <li>Implementation: Xilinx Vivado</li>
